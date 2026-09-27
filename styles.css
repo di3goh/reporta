@@ -455,6 +455,20 @@ dialog input{display:block;width:100%;border:1px solid #dce3ec;border-radius:8px
 .footer-v2-copy{font:14px/1.45 Montserrat;margin-top:10px}
 .footer-v2-copy p{margin:16px 0 0}
 
+/* Controles Lucide: tamaño estable en botones, búsquedas y tarjetas. */
+[data-lucide]{width:1.15em;height:1.15em;stroke-width:2.25;flex:0 0 auto}
+.emergency-grid-v2 .icon-v2,.resource-icon-v2{width:65px;height:65px}
+.resource-icon-v2{width:47px;height:47px}
+.emergency-grid-v2 article>a,.resource-grid-v2 article>a,.footer-v2-actions>a,.footer-v2-actions .pill,
+.search-row button,.report-search button{display:flex;align-items:center;justify-content:center;gap:8px}
+.emergency-grid-v2 article>a [data-lucide],.resource-grid-v2 article>a [data-lucide]{width:18px;height:18px}
+.search-row button [data-lucide],.report-search button [data-lucide]{width:19px;height:19px}
+.search-row label>span,.report-search label>span{display:flex;align-items:center}
+.search-row label>span [data-lucide],.report-search label>span [data-lucide]{width:20px;height:20px}
+.footer-v2-actions [data-lucide]{width:17px;height:17px}
+#smooth-wrapper{overflow:hidden}
+#smooth-content{will-change:transform}
+
 @media(max-width:1000px){.emergency-grid-v2{grid-template-columns:repeat(3,1fr)}
 .resource-grid-v2{grid-template-columns:repeat(2,1fr)}
 .map-v2{width:100%}

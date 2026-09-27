@@ -32,3 +32,50 @@ const faqs=[['¿Cómo busco a una persona?','Escribe el nombre, apellido, zona o
 document.querySelector('#faq-list').innerHTML=faqs.map((f,i)=>`<article class="faq-item ${i===0?'open':''}"><button>${f[0]} <span>⌄</span></button><p>${f[1]}</p></article>`).join('');
 document.querySelectorAll('.faq-item button').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
 const dialog=document.querySelector('#report-dialog'); document.querySelectorAll('.report-trigger').forEach(b=>b.addEventListener('click',()=>dialog.showModal()));document.querySelector('.close').addEventListener('click',()=>dialog.close());
+
+// Iconos consistentes con Lucide: evita depender de caracteres Unicode que pueden
+// romperse por la codificación del documento o renderizarse con tamaños distintos.
+if (window.lucide) {
+  const iconNames = {
+    shield: 'shield-check', medical: 'heart-pulse', warning: 'triangle-alert',
+    fire: 'flame', message: 'message-circle', home: 'house', people: 'users'
+  };
+  document.querySelectorAll('.icon-v2, .resource-icon-v2').forEach((icon) => {
+    const name = Object.entries(iconNames).find(([key]) => icon.classList.contains(key))?.[1] || 'circle-help';
+    icon.dataset.lucide = name;
+    icon.textContent = '';
+  });
+  document.querySelectorAll('.emergency-grid-v2 article > a').forEach((link) => {
+    link.innerHTML = '<i data-lucide="phone"></i><span>Llamar</span>';
+  });
+  document.querySelectorAll('.resource-grid-v2 article > a').forEach((link, index) => {
+    const icon = index === 3 ? 'message-circle' : 'map-pin';
+    link.innerHTML = `<i data-lucide="${icon}"></i><span>${index === 3 ? 'Ver Canal de Whatsapp' : 'Ver ubicaciones'}</span>`;
+  });
+  document.querySelectorAll('.search-row button, .report-search button').forEach((button) => {
+    button.innerHTML = '<i data-lucide="search"></i><span>Buscar Persona</span>';
+  });
+  document.querySelectorAll('.search-row label, .report-search label').forEach((label) => {
+    const input = label.querySelector('input');
+    label.innerHTML = '<span><i data-lucide="search"></i></span>';
+    if (input) label.appendChild(input);
+  });
+  lucide.createIcons({ attrs: { 'stroke-width': 2.25 } });
+}
+
+// ScrollSmoother mantiene el scroll fluido y sincroniza las animaciones con ScrollTrigger.
+const smoothContent = document.querySelector('#smooth-content');
+const visibleFooter = document.querySelector('.site-footer-v2');
+if (smoothContent && visibleFooter) smoothContent.appendChild(visibleFooter);
+
+if (window.gsap && window.ScrollTrigger && window.ScrollSmoother && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  ScrollSmoother.create({
+    wrapper: '#smooth-wrapper',
+    content: '#smooth-content',
+    smooth: 1.05,
+    effects: true,
+    normalizeScroll: true,
+    ignoreMobileResize: true
+  });
+}

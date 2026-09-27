@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
   <body>
+    <div id="smooth-wrapper"><div id="smooth-content">
     <header class="hero">
       <nav class="nav container">
         <div class="nav-links"><a href="#personas">Personas</a><a href="#ayuda">Noticias</a><a href="#centros">Centros de Ayuda</a></div>
@@ -44,6 +46,10 @@
     </main>
     <footer><div class="container footer-top"><div class="brand footer-brand"><strong>ENCUENTRA PERÚ</strong><span>Reporta o Busca</span></div><div class="footer-links"><a href="#personas">Personas</a><a href="#ayuda">Noticias</a><a href="#centros">Donaciones</a><a href="#faq-list">Legal</a><a href="#faq-list">Ayuda</a></div><div class="footer-actions"><a class="emergency" href="tel:119">☎ 119</a><button class="pill report-trigger">ⓘ Reportar Persona</button></div></div><div class="container disclaimer"><p>Encuentra Perú es una plataforma ciudadana creada para facilitar la búsqueda y el reporte de personas no localizadas durante situaciones de emergencia, como terremotos y otros desastres naturales.</p><p>La información publicada puede ser aportada por ciudadanos y organizaciones, por lo que recomendamos verificar los datos antes de compartirlos.</p><small>Encuentra Perú no reemplaza a los servicios oficiales de emergencia. En caso de peligro inmediato, comunícate con las autoridades correspondientes.</small></div></footer>
     <dialog id="report-dialog"><button class="close" aria-label="Cerrar">×</button><h2>Crear un reporte</h2><p>Comparte información verificada para ayudar a conectar familias.</p><label>Nombre o descripción<input placeholder="Ej. Persona no localizada" /></label><label>Última ubicación conocida<input placeholder="Distrito, ciudad" /></label><button class="submit">Enviar reporte</button></dialog>
+    </div></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="app.js"></script>
     <footer class="site-footer-v2"><div class="container footer-v2-top"><div class="footer-v2-brand"><strong>ENCUENTRA PER&Uacute;</strong><span>Reporta o Busca</span></div><nav class="footer-v2-links"><a href="#personas">Personas</a><a href="#ayuda">Noticias</a><a href="#recursos">Donaciones</a><a href="#faq-list">Legal</a><a href="#faq-list">Ayuda</a></nav><div class="footer-v2-actions"><a href="tel:119">?&nbsp; 119</a><button class="pill report-trigger">?&nbsp; Reportar Persona</button></div></div><div class="container footer-v2-copy"><p>Encuentra Per&uacute; es una plataforma ciudadana creada para facilitar la b&uacute;squeda y el reporte de personas no localizadas durante situaciones de emergencia, como terremotos y otros desastres naturales. Su objetivo es ayudar a conectar a familias, compartir informaci&oacute;n &uacute;til y reunir reportes en un solo lugar para que puedan ser consultados de manera r&aacute;pida y ordenada.</p><p>La informaci&oacute;n publicada puede ser aportada por ciudadanos y organizaciones, por lo que recomendamos verificar los datos antes de compartirlos. Si reconoces a una persona o cuentas con informaci&oacute;n relevante, utiliza los canales de contacto indicados y evita difundir datos personales innecesarios.</p><p>Encuentra Per&uacute; no reemplaza a los servicios oficiales de emergencia. En caso de peligro inmediato, comun&iacute;cate con las autoridades correspondientes.</p></div></footer>
   </body>
